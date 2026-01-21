@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
+import { WHATSAPP_LINK } from '@/lib/constants';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +39,9 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button size="sm">Get Started</Button>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+              <Button size="sm">Get Started</Button>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -64,7 +67,9 @@ export function Navbar() {
                 {item}
               </Link>
             ))}
-            <Button className="w-full">Get Started</Button>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="block w-full">
+              <Button className="w-full">Get Started</Button>
+            </a>
         </div>
       )}
     </header>

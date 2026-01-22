@@ -10,7 +10,7 @@ export function Hero() {
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden min-h-[90vh] flex items-center">
       {/* Background Globe */}
       {/* Background Globe */}
-      <div className="absolute top-1/2 left-50 -translate-x-1/2 -translate-y-1/2 w-full h-full z-0 lg:-left-80 lg:translate-x-[-10%] lg:w-full lg:h-full md:left-[90%]">
+      <div className="absolute top-130 left-50 -translate-x-1/2 -translate-y-1/2 w-full h-full z-0 lg:-left-80 lg:translate-x-[-10%] lg:w-full lg:h-full md:left-[90%]">
         <Globe3D />
       </div>
 

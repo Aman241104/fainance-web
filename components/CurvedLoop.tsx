@@ -53,6 +53,7 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
     if (textPathRef.current) {
       const initial = -spacing;
       textPathRef.current.setAttribute('startOffset', initial + 'px');
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       setOffset(initial);
     }
   }, [spacing]);
@@ -77,12 +78,23 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
     return () => cancelAnimationFrame(frame);
   }, [spacing, speed, ready]);
 
+  const [cursorStyle, setCursorStyle] = useState<'auto' | 'grab' | 'grabbing'>('auto');
+
+  useEffect(() => {
+    if (!interactive) {
+       setCursorStyle('auto');
+       return;
+    }
+    setCursorStyle(dragRef.current ? 'grabbing' : 'grab');
+  }, [interactive]); // Initial set
+
   const onPointerDown = (e: PointerEvent) => {
     if (!interactive) return;
     dragRef.current = true;
     lastXRef.current = e.clientX;
     velRef.current = 0;
     (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    setCursorStyle('grabbing');
   };
 
   const onPointerMove = (e: PointerEvent) => {
@@ -103,9 +115,8 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
     if (!interactive) return;
     dragRef.current = false;
     dirRef.current = velRef.current > 0 ? 'right' : 'left';
+    setCursorStyle('grab');
   };
-
-  const cursorStyle = interactive ? (dragRef.current ? 'grabbing' : 'grab') : 'auto';
 
   return (
     <div

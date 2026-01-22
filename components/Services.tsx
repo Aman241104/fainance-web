@@ -11,6 +11,7 @@ import {
   Plane 
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import CurvedLoop from './CurvedLoop';
 
 const services = [
   {
@@ -52,14 +53,23 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-24 bg-slate-50">
+    <section id="services" className="py-24 bg-slate-50 overflow-hidden">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Our Services</h2>
+          <h2 className="text-6xl lg:text-4xl font-bold text-emerald-600 mb-4">Our Services</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Comprehensive financial solutions designed for the modern global citizen.
           </p>
         </div>
+        <div className="-mt-10">
+        <CurvedLoop 
+          marqueeText="Borderless ✦ Seamless ✦ Secure ✦ Global ✦ Finance ✦" 
+          speed={3} 
+          curveAmount={80} 
+          interactive={true}
+          className="text-emerald-700" 
+        />
+      </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (

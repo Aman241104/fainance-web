@@ -54,14 +54,7 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="py-24 bg-slate-50 overflow-hidden">
-      <Container>
-        <div className="text-center mb-16">
-          <h2 className="text-6xl lg:text-4xl font-bold text-emerald-600 mb-4">Our Services</h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Comprehensive financial solutions designed for the modern global citizen.
-          </p>
-        </div>
-        <div className="-mt-10">
+      <div className="-mt-10">
         <CurvedLoop 
           marqueeText="Borderless ✦ Seamless ✦ Secure ✦ Global ✦ Finance ✦" 
           speed={3} 
@@ -70,6 +63,13 @@ export function Services() {
           className="text-emerald-700" 
         />
       </div>
+      <Container>
+        <div className="text-center mb-16">
+          <h2 className="text-6xl lg:text-4xl font-bold text-emerald-600 mb-4">Our Services</h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Comprehensive financial solutions designed for the modern global citizen.
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (

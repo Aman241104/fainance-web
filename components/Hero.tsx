@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden min-h-[90vh] flex items-center bg-slate-50">
+    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden min-h-[90vh] flex items-center bg-slate-50 lg:bg-slate-50">
       
       {/* Background Globe - Absolute Positioned z-0 */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-0 md:left-full md:translate-x-[-50%] lg:left-auto lg:right-[-20%] lg:translate-x-0 lg:w-[80%] opacity-90 pointer-events-none">
@@ -27,7 +27,7 @@ export function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/90 backdrop-blur-sm border border-emerald-200 text-emerald-800 text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/50 lg:bg-emerald-100/90 backdrop-blur-sm border border-emerald-500/30 lg:border-emerald-200 text-emerald-400 lg:text-emerald-800 text-sm font-medium mb-6">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -35,12 +35,12 @@ export function Hero() {
                 Established 2020 • 150 Cr+ Turnover
               </div>
 
-              <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6 drop-shadow-sm">
+              <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white lg:text-slate-900 md:text-slate-900 leading-[1.1] mb-6 drop-shadow-sm">
                 Expert Global Remittance. <br />
-                <span className="text-emerald-700">150 Cr+ Trusted Transactions.</span>
+                <span className="text-emerald-400 lg:text-emerald-700">150 Cr+ Trusted Transactions.</span>
               </h1>
               
-              <p className="text-lg text-slate-800 font-medium mb-8 max-w-lg leading-relaxed bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-white/40">
+              <p className="text-lg text-white lg:text-slate-900 md:text-slate-900 font-medium mb-8 max-w-lg leading-relaxed bg-white/10 lg:bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-white/10 lg:border-white/40">
                 Specializing in high-stakes international remittances and student fee payments via platforms like Flywire, Convera, and CIBC. Trusted by families for seamless maintenance support.
               </p>
               
@@ -67,15 +67,15 @@ export function Hero() {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6 border-t border-slate-200/60 pt-8 bg-white/30 backdrop-blur-sm rounded-xl p-6">
                 <div>
                   <p className="text-3xl font-bold text-slate-900">150 Cr+</p>
-                  <p className="text-sm text-slate-600 font-bold">Annual Turnover</p>
+                  <p className="text-sm text-white lg:text-slate-900 md:text-slate-900 font-bold">Annual Turnover</p>
                 </div>
                 <div>
                   <p className="text-3xl font-bold text-slate-900">2020</p>
-                  <p className="text-sm text-slate-600 font-bold">Established</p>
+                  <p className="text-sm text-white lg:text-slate-900 md:text-slate-900 font-bold">Established</p>
                 </div>
                 <div>
                   <p className="text-3xl font-bold text-slate-900">India-Canada</p>
-                  <p className="text-sm text-slate-600 font-bold">Primary Network</p>
+                  <p className="text-sm text-white lg:text-slate-900 md:text-slate-900 font-bold">Primary Network</p>
                 </div>
               </div>
             </motion.div>

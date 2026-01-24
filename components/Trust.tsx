@@ -12,7 +12,7 @@ const logos = [
 
 export function Trust() {
   return (
-    <section className="py-12 border-b border-slate-100 bg-white">
+    <section id="trust" className="py-12 border-b border-slate-100 bg-white">
       <Container>
         <p className="text-center text-sm font-medium text-slate-500 mb-8 uppercase tracking-wider">Trusted by Industry Leaders</p>
         <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-16 opacity-50">

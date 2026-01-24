@@ -77,10 +77,10 @@ export function Services() {
               key={service.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-soft hover:shadow-lg transition-all duration-300 group"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: index * 0.05, duration: 0.5, ease: "easeOut" }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-300 group"
             >
               <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-6 group-hover:bg-emerald-700 transition-colors duration-300">
                 <service.icon className="w-6 h-6 text-emerald-700 group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />

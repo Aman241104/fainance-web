@@ -1,9 +1,12 @@
+"use client";
+
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { WHATSAPP_LINK } from '@/lib/constants';
 
 export function CTA() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section id="cta" className="py-24 bg-white relative overflow-hidden">
        {/* Background decorative elements */}
        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-slate-50 rounded-full blur-3xl -z-10 opacity-60" />
 
@@ -16,8 +19,13 @@ export function CTA() {
               Join thousands of businesses and individuals who trust Prihaan Financial Services for their global transactions.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="px-10">Get Started Now</Button>
-              <Button variant="outline" size="lg">Contact Sales</Button>
+              <Button 
+                size="lg" 
+                className="px-10"
+                onClick={() => window.open(WHATSAPP_LINK, '_blank')}
+              >
+                Get Started Now
+              </Button>
             </div>
          </div>
        </Container>

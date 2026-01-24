@@ -21,7 +21,7 @@ function Globe({ ...props }) {
   });
 
   return (
-    <Sphere args={[1.5, 64, 64]} {...props} ref={meshRef}>
+    <Sphere args={[1.5, 48, 48]} {...props} ref={meshRef}>
       <meshPhongMaterial
         map={colorMap}
         normalMap={normalMap}
@@ -34,7 +34,7 @@ function Globe({ ...props }) {
 
 function Atmosphere() {
   return (
-    <Sphere args={[1.65, 64, 64]}>
+    <Sphere args={[1.65, 48, 48]}>
       <meshStandardMaterial
         color="#10b981" // Emerald 500
         transparent
@@ -89,7 +89,11 @@ function Scene() {
 export function Globe3D() {
   return (
     <div className="w-full h-full min-h-[400px]">
-      <Canvas camera={{ position: [0, 0, 4.5], fov: 45 }}>
+      <Canvas 
+        camera={{ position: [0, 0, 4.5], fov: 45 }}
+        dpr={[1, 2]} // Limit pixel ratio for performance
+        gl={{ powerPreference: "high-performance", antialias: true }}
+      >
         <Scene />
       </Canvas>
     </div>

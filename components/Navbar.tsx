@@ -22,9 +22,9 @@ export function Navbar() {
       bgColor: "#0f172a", // slate-900
       textColor: "#f8fafc", // slate-50
       links: [
-        { label: "About Us", href: "#about", ariaLabel: "About Prihaan" },
-        { label: "Careers", href: "#", ariaLabel: "Careers at Prihaan" },
-        { label: "Press", href: "#", ariaLabel: "Press Releases" }
+        { label: "Home", href: "/", ariaLabel: "Home Page" },
+        { label: "Trusted By", href: "#trust", ariaLabel: "Our Partners" },
+        { label: "Get Started", href: "#cta", ariaLabel: "Get Started Section" }
       ]
     },
     {
@@ -32,9 +32,9 @@ export function Navbar() {
       bgColor: "#047857", // emerald-700
       textColor: "#fff",
       links: [
-        { label: "Money Transfer", href: "#", ariaLabel: "Remittance Services" },
-        { label: "Forex", href: "#", ariaLabel: "Foreign Exchange" },
-        { label: "Travel Insurance", href: "#", ariaLabel: "Insurance Services" }
+        { label: "Money Transfer", href: "#services", ariaLabel: "Remittance Services" },
+        { label: "Forex", href: "#services", ariaLabel: "Foreign Exchange" },
+        { label: "Travel Insurance", href: "#services", ariaLabel: "Insurance Services" }
       ]
     },
     {
@@ -42,9 +42,9 @@ export function Navbar() {
       bgColor: "#1e293b", // slate-800
       textColor: "#f8fafc",
       links: [
-        { label: "Help Center", href: "#", ariaLabel: "Help Center" },
-        { label: "Contact Us", href: "#contact", ariaLabel: "Contact Support" },
-        { label: "FAQs", href: "#", ariaLabel: "Frequently Asked Questions" }
+        { label: "Help Center", href: WHATSAPP_LINK, ariaLabel: "Help Center" },
+        { label: "Contact Us", href: WHATSAPP_LINK, ariaLabel: "Contact Support" },
+        { label: "FAQs", href: WHATSAPP_LINK, ariaLabel: "Frequently Asked Questions" }
       ]
     }
   ];

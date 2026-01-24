@@ -2,96 +2,133 @@
 
 import { Container } from '@/components/ui/Container';
 import { 
-  Banknote, 
-  Send, 
-  ArrowDownLeft, 
-  ShieldPlus, 
   GraduationCap, 
-  FileCheck, 
-  Plane 
+  Building2, 
+  Plane, 
+  CreditCard, 
+  HeartHandshake, 
+  Gift 
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import CurvedLoop from './CurvedLoop';
 
-const services = [
+const SERVICES_DATA = [
   {
-    title: 'Foreign Currency Exchange',
-    description: 'Competitive rates for all major global currencies with instant availability.',
-    icon: Banknote,
-  },
-  {
-    title: 'Overseas Remittance',
-    description: 'Fast and secure money transfers to loved ones or businesses worldwide.',
-    icon: Send,
-  },
-  {
-    title: 'Inward Remittance',
-    description: 'Receive payments from abroad directly to your local bank account.',
-    icon: ArrowDownLeft,
-  },
-  {
-    title: 'Overseas Health Insurance',
-    description: 'Comprehensive travel and health coverage for international stays.',
-    icon: ShieldPlus,
-  },
-  {
-    title: 'Overseas Fees Payment',
-    description: 'Seamless tuition and fee payments for international universities.',
+    title: 'Student Fee Payments',
+    description: 'Expert handling of tuition fees via Flywire, Convera, and CIBC for international universities. Secure, fast, and compliant.',
     icon: GraduationCap,
   },
   {
-    title: 'Visa Services',
-    description: 'Expert assistance with visa applications and documentation.',
-    icon: FileCheck,
+    title: 'Overseas Block Accounts',
+    description: 'Secure fund transfers for student visa requirements (GIC/Blocked Accounts) in Germany, Canada, and more.',
+    icon: Building2,
   },
   {
-    title: 'Air Ticketing',
-    description: 'Best deals on international flights with flexible booking options.',
+    title: 'Tour & Travel Payments',
+    description: 'Seamless payments for international tour operators. Handling high-volume transactions from 1 Rs to 2.5 Cr.',
     icon: Plane,
+  },
+  {
+    title: 'Currency & Travel Cards',
+    description: 'Best-in-class exchange rates for physical currency and multi-currency forex cards for global travelers.',
+    icon: CreditCard,
+  },
+  {
+    title: 'Family Maintenance',
+    description: 'Reliable and hassle-free remittance services for supporting family members living abroad.',
+    icon: HeartHandshake,
+  },
+  {
+    title: 'Gift Remittance',
+    description: 'Send monetary gifts to loved ones internationally with complete regulatory compliance and safety.',
+    icon: Gift,
   },
 ];
 
 export function Services() {
+  // Stagger Animations
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
+  };
+
   return (
     <section id="services" className="py-24 bg-slate-50 overflow-hidden">
-      <div className="-mt-10">
-        <CurvedLoop 
-          marqueeText="Borderless ✦ Seamless ✦ Secure ✦ Global ✦ Finance ✦" 
-          speed={3} 
-          curveAmount={80} 
-          interactive={true}
-          className="text-emerald-700" 
-        />
-      </div>
-      <Container>
+      <Container className="max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-6xl lg:text-4xl font-bold text-emerald-600 mb-4">Our Services</h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Comprehensive financial solutions designed for the modern global citizen.
-          </p>
+          <motion.span 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-emerald-600 font-bold tracking-wider text-sm uppercase mb-3 block"
+          >
+            Our Expertise
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
+          >
+            Tailored Financial Solutions <br className="hidden md:block" /> for Global Mobility
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-slate-600 max-w-2xl mx-auto"
+          >
+            From student fees to high-value corporate transactions, we provide specialized services designed for your unique needs.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: index * 0.05, duration: 0.5, ease: "easeOut" }}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-300 group"
-            >
-              <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-6 group-hover:bg-emerald-700 transition-colors duration-300">
-                <service.icon className="w-6 h-6 text-emerald-700 group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {SERVICES_DATA.map((service, index) => {
+             const isSpecial = service.title === 'Student Fee Payments';
+             return (
+               <motion.div
+                 key={service.title}
+                 variants={item}
+                 whileHover={{ scale: 1.02, y: -5, transition: { duration: 0.2 } }}
+                 className={`bg-white p-8 rounded-2xl border shadow-sm transition-all duration-300 group relative ${
+                   isSpecial 
+                     ? 'border-emerald-200/60 shadow-[0_0_15px_rgba(16,185,129,0.1)]' 
+                     : 'border-slate-100 hover:shadow-xl hover:border-emerald-500/30'
+                 }`}
+               >
+                 {/* Pulsing Border for Special Card */}
+                 {isSpecial && (
+                   <div className="absolute inset-0 rounded-2xl border-2 border-emerald-400/30 animate-pulse pointer-events-none" style={{ animationDuration: '3s' }} />
+                 )}
+
+                 <div className="w-14 h-14 rounded-full bg-emerald-50 flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition-colors duration-300">
+                   <service.icon className="w-7 h-7 text-emerald-600 group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+                 </div>
+                 <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-700 transition-colors">{service.title}</h3>
+                 <p className="text-slate-600 leading-relaxed text-base">
+                   {service.description}
+                 </p>
+               </motion.div>
+             );
+          })}
+        </motion.div>
       </Container>
     </section>
   );

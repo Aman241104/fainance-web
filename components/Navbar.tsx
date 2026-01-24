@@ -1,64 +1,77 @@
 "use client";
 
 import Link from 'next/link';
-import CardNav, { CardNavItem } from '@/components/CardNav';
+import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
+import { Container } from '@/components/ui/Container';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { useState } from 'react';
 import { WHATSAPP_LINK } from '@/lib/constants';
 
 export function Navbar() {
-  const logo = (
-    <Link href="/" className="flex items-center gap-2">
-      <div className="h-8 w-8 rounded-lg bg-emerald-700 flex items-center justify-center">
-        <span className="text-white font-bold text-lg">P</span>
-      </div>
-      <span className="text-xl font-bold tracking-tight text-slate-900">
-        Prihaan<span className="text-emerald-700">.</span>
-      </span>
-    </Link>
-  );
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { scrollY } = useScroll();
 
-  const items: CardNavItem[] = [
-    {
-      label: "Company",
-      bgColor: "#0f172a", // slate-900
-      textColor: "#f8fafc", // slate-50
-      links: [
-        { label: "Home", href: "/", ariaLabel: "Home Page" },
-        { label: "Trusted By", href: "#trust", ariaLabel: "Our Partners" },
-        { label: "Get Started", href: "#cta", ariaLabel: "Get Started Section" }
-      ]
-    },
-    {
-      label: "Services", 
-      bgColor: "#047857", // emerald-700
-      textColor: "#fff",
-      links: [
-        { label: "Money Transfer", href: "#services", ariaLabel: "Remittance Services" },
-        { label: "Forex", href: "#services", ariaLabel: "Foreign Exchange" },
-        { label: "Travel Insurance", href: "#services", ariaLabel: "Insurance Services" }
-      ]
-    },
-    {
-      label: "Support",
-      bgColor: "#1e293b", // slate-800
-      textColor: "#f8fafc",
-      links: [
-        { label: "Help Center", href: WHATSAPP_LINK, ariaLabel: "Help Center" },
-        { label: "Contact Us", href: WHATSAPP_LINK, ariaLabel: "Contact Support" },
-        { label: "FAQs", href: WHATSAPP_LINK, ariaLabel: "Frequently Asked Questions" }
-      ]
-    }
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 20);
+  });
+
+  const navLinks = [
+    { label: "Services", href: "#services" },
+    { label: "Student Portal", href: "/student-portal" },
+    { label: "Corporate", href: "#corporate" },
+    { label: "About", href: "#about" },
   ];
 
   return (
-    <CardNav
-      logo={logo}
-      items={items}
-      baseColor="#fff"
-      menuColor="#0f172a"
-      buttonBgColor="#047857"
-      buttonTextColor="#fff"
-      ease="power3.out"
-      className="font-sans"
-    />
+    <motion.header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-white/80 backdrop-blur-md border-b border-emerald-500/30 shadow-sm py-4" 
+          : "bg-transparent py-6"
+      }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Container>
+        <nav className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative h-12 w-12 rounded-xl overflow-hidden shadow-lg shadow-emerald-900/10 group-hover:scale-105 transition-transform duration-300">
+              <Image src="/logo.jpg" alt="Prihaan Financial Services" fill className="object-cover" />
+            </div>
+            <span className={`text-xl font-bold tracking-tight transition-colors ${isScrolled ? "text-slate-900" : "text-slate-900"}`}>
+              Prihaan<span className="text-emerald-600">.</span>
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.label} 
+                href={link.href}
+                className={`text-sm font-medium hover:text-emerald-600 transition-colors ${
+                  isScrolled ? "text-slate-700" : "text-slate-700"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="flex items-center gap-4">
+            <Button 
+              className="bg-[#107C41] hover:bg-emerald-800 text-white shadow-lg shadow-emerald-900/20 px-6"
+              onClick={() => window.open(WHATSAPP_LINK, '_blank')}
+            >
+              Get Started
+            </Button>
+          </div>
+        </nav>
+      </Container>
+    </motion.header>
   );
 }

@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Prihaan Financial Services | Global Finance, Simplified",
   description:
     "Secure foreign currency exchange, remittance, and financial services for global citizens.",
+  icons: {
+    icon: "/logo.jpg",
+  },
 };
 
 export default function RootLayout({

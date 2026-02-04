@@ -19,10 +19,10 @@ export function Navbar() {
   });
 
   const navLinks = [
+    { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
     { label: "Student Portal", href: "/student-portal" },
     { label: "Corporate", href: "#corporate" },
-    { label: "About", href: "#about" },
   ];
 
   return (
@@ -40,12 +40,18 @@ export function Navbar() {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group z-50">
-            <div className="relative h-12 w-12 rounded-xl overflow-hidden shadow-lg shadow-emerald-900/10 group-hover:scale-105 transition-transform duration-300">
-              <Image src="/logo.jpeg" alt="Prihaan Financial Services" fill className="object-cover" />
+            <div className="relative h-12 w-12 rounded-full overflow-hidden shadow-lg shadow-emerald-900/10 group-hover:scale-105 transition-transform duration-300">
+              <Image src="/logo.png" alt="Prihaan Financial Services" fill className="object-cover" />
             </div>
-            <span className={`text-xl font-bold tracking-tight transition-colors ${isScrolled || isMobileMenuOpen ? "text-slate-900" : "text-slate-900"}`}>
-              Prihaan<span className="text-emerald-600">.</span>
-            </span>
+            <div className="relative h-10 w-32 md:w-40">
+               <Image 
+                 src="/name.png" 
+                 alt="Prihaan" 
+                 fill 
+                 className="object-contain object-left" 
+                 priority
+               />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

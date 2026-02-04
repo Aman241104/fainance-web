@@ -3,9 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Instagram, MessageCircle, Mail, MapPin } from 'lucide-react';
 
+import { CurrencyBackground } from './CurrencyBackground';
+
 export function Footer() {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200 pt-20 pb-10 font-sans">
+    <footer className="bg-slate-50 border-t border-slate-200 pt-20 pb-10 font-sans relative overflow-hidden">
+      <CurrencyBackground count={15} className="text-emerald-500 z-0" opacity={0.15} />
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 px-4 md:px-0">
           

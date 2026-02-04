@@ -38,9 +38,12 @@ const PARTNERS = [
   "Flywire", "Convera", "CIBC", "Visa", "Mastercard", "Western Union"
 ];
 
+import { CurrencyBackground } from './CurrencyBackground';
+
 export function Trust() {
   return (
-    <section id="trust" className="bg-white">
+    <section id="trust" className="bg-white relative">
+      <CurrencyBackground count={15} className="text-emerald-500 z-0" opacity={0.15} />
       
       {/* 1. Infinite Ticker & BNI Badge */}
       <div className="border-b border-slate-100 py-8 overflow-hidden bg-slate-50/50">
@@ -89,6 +92,8 @@ export function Trust() {
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-emerald-500 rounded-full blur-[100px] -translate-y-1/2" />
           <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-500 rounded-full blur-[80px]" />
         </div>
+        
+        <CurrencyBackground count={8} className="text-emerald-500 z-0" opacity={0.15} />
 
         <Container className="relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">

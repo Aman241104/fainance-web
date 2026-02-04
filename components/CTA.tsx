@@ -8,6 +8,8 @@ import { MapPin, ArrowRight, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import { submitContactForm } from '@/actions/submit-contact';
 
+import { CurrencyBackground } from './CurrencyBackground';
+
 export function CTA() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -85,7 +87,8 @@ export function CTA() {
       </div>
 
       {/* 2. Global Contact Form Section */}
-      <div className="bg-slate-50 py-24">
+      <div className="bg-slate-50 py-24 relative overflow-hidden">
+        <CurrencyBackground count={12} className="text-emerald-500 z-0" opacity={0.15} />
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             

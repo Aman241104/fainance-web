@@ -44,6 +44,8 @@ const SERVICES_DATA = [
   },
 ];
 
+import { CurrencyBackground } from './CurrencyBackground';
+
 export function Services() {
   // Stagger Animations
   const container = {
@@ -62,7 +64,8 @@ export function Services() {
   };
 
   return (
-    <section id="services" className="py-24 bg-slate-50 overflow-hidden">
+    <section id="services" className="py-24 bg-slate-50 overflow-hidden relative">
+      <CurrencyBackground count={20} className="text-emerald-500 z-0" opacity={0.15} />
       <Container className="max-w-7xl">
         <div className="text-center mb-16">
           <motion.span 

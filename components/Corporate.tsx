@@ -27,6 +27,8 @@ const CORPORATE_FEATURES = [
   },
 ];
 
+import { CurrencyBackground } from './CurrencyBackground';
+
 export function Corporate() {
   const handlePartnerClick = () => {
     const message = "Hello Ankit, I represent a business and I am interested in a Corporate Partnership.";
@@ -36,6 +38,7 @@ export function Corporate() {
 
   return (
     <section id="corporate" className="py-24 bg-white relative overflow-hidden">
+      <CurrencyBackground count={12} className="text-emerald-500 z-0" opacity={0.15} />
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 skew-x-12 translate-x-1/4 pointer-events-none" />
       

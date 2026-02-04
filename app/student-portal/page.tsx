@@ -9,6 +9,8 @@ import { Loader2, Send, GraduationCap, Globe, Plane, Wallet, ArrowLeft } from 'l
 import { WHATSAPP_NUMBER } from '@/lib/constants';
 import Link from 'next/link';
 
+import { CurrencyBackground } from '@/components/CurrencyBackground';
+
 export default function StudentPortal() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -45,7 +47,8 @@ export default function StudentPortal() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-50 py-10 md:py-20">
+    <main className="min-h-screen bg-slate-50 py-10 md:py-20 relative overflow-hidden">
+      <CurrencyBackground count={20} className="text-emerald-500 z-0" opacity={0.15} />
       <Container className="max-w-4xl">
         
         {/* Back Button */}

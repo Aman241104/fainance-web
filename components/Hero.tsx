@@ -29,7 +29,7 @@ export function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/50 lg:bg-emerald-100/90 backdrop-blur-sm border border-emerald-500/30 lg:border-emerald-200 text-emerald-400 lg:text-emerald-800 text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/90 backdrop-blur-sm border border-emerald-200 text-emerald-800 text-sm font-medium mb-6">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>

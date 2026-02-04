@@ -16,12 +16,17 @@ export function Footer() {
           {/* Column 1: Brand & Credibility */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <div className="relative h-12 w-12 rounded-xl overflow-hidden shadow-md">
-                <Image src="/logo.jpeg" alt="Prihaan Logo" fill className="object-cover" />
+              <div className="relative h-12 w-12 rounded-full overflow-hidden shadow-md">
+                <Image src="/logo.png" alt="Prihaan Logo" fill className="object-cover" />
               </div>
-              <span className="text-2xl font-bold tracking-tight text-slate-900">
-                Prihaan<span className="text-emerald-600">.</span>
-              </span>
+              <div className="relative h-12 w-32 md:w-32">
+                 <Image 
+                   src="/name.png" 
+                   alt="Prihaan" 
+                   fill 
+                   className="object-contain object-left" 
+                 />
+              </div>
             </div>
             <p className="text-slate-600 text-sm leading-relaxed">
               A premier global financial firm specializing in student fees and high-value remittances since 2020.

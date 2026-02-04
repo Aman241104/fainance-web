@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { motion } from 'framer-motion';
 import { Globe3D } from '@/components/Globe3D';
+
 import { WHATSAPP_LINK } from '@/lib/constants';
 import Link from 'next/link';
 
@@ -15,6 +16,7 @@ export function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-0 md:left-full md:translate-x-[-50%] lg:left-auto lg:right-[-20%] lg:translate-x-0 lg:w-[80%] opacity-90 pointer-events-none">
         <Globe3D />
       </div>
+
 
       <Container className="relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center pointer-events-none">
@@ -41,7 +43,7 @@ export function Hero() {
               </h1>
               
               <p className="text-lg text-white lg:text-slate-900 md:text-slate-900 font-medium mb-8 max-w-lg leading-relaxed bg-white/10 lg:bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-white/10 lg:border-white/40">
-                Specializing in high-stakes international remittances and student fee payments via platforms like Flywire, Convera, and CIBC. Trusted by families for seamless maintenance support.
+                Specializing in high-stakes international remittances and student fee payments via platforms like Flywire, Convera, and CIBC. Trusted by families for seamless maintenance support. In Same Business from last 25 years.
               </p>
               
               <div className="flex flex-wrap gap-4 mb-12">
@@ -66,16 +68,16 @@ export function Hero() {
               {/* Stats / Social Proof */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6 border-t border-slate-200/60 pt-8 bg-white/30 backdrop-blur-sm rounded-xl p-6">
                 <div>
-                  <p className="text-3xl font-bold text-slate-900">150 Cr+</p>
-                  <p className="text-sm text-white lg:text-slate-900 md:text-slate-900 font-bold">Annual Turnover</p>
+                  <p className="text-3xl font-bold text-slate-900">25+</p>
+                  <p className="text-sm text-white lg:text-slate-900 md:text-slate-900 font-bold">Years Experience</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-slate-900">2020</p>
-                  <p className="text-sm text-white lg:text-slate-900 md:text-slate-900 font-bold">Established</p>
+                  <p className="text-3xl font-bold text-slate-900">1000+</p>
+                  <p className="text-sm text-white lg:text-slate-900 md:text-slate-900 font-bold">Happy Clients</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-slate-900">India-Canada</p>
-                  <p className="text-sm text-white lg:text-slate-900 md:text-slate-900 font-bold">Primary Network</p>
+                  <p className="text-3xl font-bold text-slate-900">Global</p>
+                  <p className="text-sm text-white lg:text-slate-900 md:text-slate-900 font-bold">Network</p>
                 </div>
               </div>
             </motion.div>

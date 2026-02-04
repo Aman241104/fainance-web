@@ -9,6 +9,7 @@ export function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-200 pt-20 pb-10 font-sans relative overflow-hidden">
       <CurrencyBackground count={15} className="text-emerald-500 z-0" opacity={0.15} />
+
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 px-4 md:px-0">
           
@@ -16,7 +17,7 @@ export function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-2">
               <div className="relative h-12 w-12 rounded-xl overflow-hidden shadow-md">
-                <Image src="/logo.jpg" alt="Prihaan Logo" fill className="object-cover" />
+                <Image src="/logo.jpeg" alt="Prihaan Logo" fill className="object-cover" />
               </div>
               <span className="text-2xl font-bold tracking-tight text-slate-900">
                 Prihaan<span className="text-emerald-600">.</span>
@@ -36,7 +37,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm font-medium text-slate-600">
               <li>
                 <span className="flex items-center gap-2 hover:text-emerald-700 hover:underline hover:decoration-emerald-500/50 underline-offset-4 transition-all cursor-pointer">
-                  India-Canada Corridor
+                  Global Network
                 </span>
               </li>
               <li>
@@ -69,18 +70,18 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-slate-600">
               <li className="flex gap-3 items-start group">
                 <Mail className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <a href="mailto:mspurdhani@hotmail.com" className="hover:text-emerald-700 text-slate-700 font-medium transition-colors">
-                  mspurdhani@hotmail.com
+                <a href="mailto:ankit.patel@prihaanfin.com" className="hover:text-emerald-700 text-slate-700 font-medium transition-colors">
+                  ankit.patel@prihaanfin.com
                 </a>
               </li>
               <li className="flex gap-3 items-start group">
                 <MapPin className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span className="leading-relaxed">
-                  502, Aatish annexe, Nr. Samarpan,<br />IDBI bank lane, Gulbai tekra,<br />Ahmedabad
+                  306, 3rd Floor, Tilak Raj Complex, Opp Sebi Bhavan, Panchavati Society 1st Lane, Ahmedabad - 380006
                 </span>
               </li>
               <li className="pt-4 flex gap-4">
-                <Link href="https://www.instagram.com/prihaanfin" target="_blank" className="p-2 bg-slate-100 rounded-lg hover:bg-emerald-600 hover:text-white transition-all text-slate-600">
+                <Link href="https://instagram.com/prihaanfin" target="_blank" className="p-2 bg-slate-100 rounded-lg hover:bg-emerald-600 hover:text-white transition-all text-slate-600">
                   <Instagram className="w-5 h-5" />
                 </Link>
                 <Link href="#" className="p-2 bg-slate-100 rounded-lg hover:bg-emerald-600 hover:text-white transition-all text-slate-600">

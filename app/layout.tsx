@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Secure foreign currency exchange, remittance, and financial services for global citizens.",
   icons: {
-    icon: "/logo.jpg",
+    icon: "/logo.jpeg",
   },
 };
 

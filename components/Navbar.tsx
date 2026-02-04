@@ -41,7 +41,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group z-50">
             <div className="relative h-12 w-12 rounded-xl overflow-hidden shadow-lg shadow-emerald-900/10 group-hover:scale-105 transition-transform duration-300">
-              <Image src="/logo.jpg" alt="Prihaan Financial Services" fill className="object-cover" />
+              <Image src="/logo.jpeg" alt="Prihaan Financial Services" fill className="object-cover" />
             </div>
             <span className={`text-xl font-bold tracking-tight transition-colors ${isScrolled || isMobileMenuOpen ? "text-slate-900" : "text-slate-900"}`}>
               Prihaan<span className="text-emerald-600">.</span>

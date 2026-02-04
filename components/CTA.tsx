@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { submitContactForm } from '@/actions/submit-contact';
 
 import { CurrencyBackground } from './CurrencyBackground';
+import { CountryTicker } from './CountryTicker';
 
 export function CTA() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -77,7 +78,7 @@ export function CTA() {
           >
             <Button 
               size="lg" 
-              className="bg-emerald-600 hover:bg-emerald-500 text-white rounded-full px-10 h-14 text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all hover:scale-105"
+              className="bg-emerald-600 hover:bg-emerald-500 text-white rounded-full px-8 md:px-10 py-6 md:py-4 h-auto text-base md:text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all hover:scale-105 whitespace-normal text-center leading-tight"
               onClick={() => window.open(WHATSAPP_LINK, '_blank')}
             >
               Schedule a Consultation with Ankit Patel
@@ -103,24 +104,32 @@ export function CTA() {
               </p>
 
               {/* Text-Based Corridor Graphic */}
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 relative overflow-hidden mb-8 group flex items-center justify-between">
-                 <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-slate-100" />
+              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 relative overflow-hidden mb-8 group flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
+                 <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-slate-100 hidden md:block" />
                  
-                 <div className="relative z-10 text-center">
-                    <span className="block text-3xl font-bold text-slate-900 tracking-tight">INDIA</span>
-                    <span className="text-xs font-semibold text-emerald-600 uppercase tracking-widest mt-1">Origin</span>
+                 <div className="relative z-10 text-center w-full md:w-auto">
+                    <CountryTicker 
+                      countries={["INDIA", "UAE", "SINGAPORE", "USA"]} 
+                      interval={2000}
+                      className="block text-3xl font-bold text-slate-900 tracking-tight min-w-[100px] h-9"
+                    />
+                    <span className="block text-xs font-semibold text-emerald-600 uppercase tracking-widest mt-1">Origin</span>
                  </div>
 
-                 <div className="relative z-10 flex flex-col items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 mb-2 shadow-sm border border-emerald-100">
+                 <div className="relative z-10 flex flex-col items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 mb-2 shadow-sm border border-emerald-100 rotate-90 md:rotate-0 transform transition-transform">
                        <ArrowRight className="w-6 h-6" />
                     </div>
                     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-white px-2">Corridor</span>
                  </div>
 
-                 <div className="relative z-10 text-center">
-                    <span className="block text-3xl font-bold text-slate-900 tracking-tight">CANADA</span>
-                    <span className="text-xs font-semibold text-emerald-600 uppercase tracking-widest mt-1">Destination</span>
+                 <div className="relative z-10 text-center w-full md:w-auto">
+                    <CountryTicker
+                      countries={["CANADA", "UK", "USA", "EUROPE"]}
+                      interval={2400}
+                      className="block text-3xl font-bold text-slate-900 tracking-tight min-w-[120px] h-9"
+                    />
+                    <span className="block text-xs font-semibold text-emerald-600 uppercase tracking-widest mt-1">Destination</span>
                  </div>
               </div>
 
@@ -131,18 +140,10 @@ export function CTA() {
                   </div>
                   <div>
                     <p className="font-bold text-slate-900">Head Office</p>
-                    <p className="text-sm text-slate-600">Ahmedabad, Gujarat, India</p>
+                    <p className="text-sm text-slate-600">306, 3rd Floor, Tilak Raj Complex, Opp Sebi Bhavan, Panchavati Society 1st Lane, Ahmedabad - 380006</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-emerald-700" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-slate-900">Canada Desk</p>
-                    <p className="text-sm text-slate-600">Toronto, Ontario, Canada</p>
-                  </div>
-                </div>
+
               </div>
             </div>
 
@@ -169,10 +170,15 @@ export function CTA() {
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-slate-700">Service Interest</label>
                   <select name="service" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all bg-slate-50">
-                    <option value="Student Fee Payment">Student Fee Payment</option>
-                    <option value="High-Value Tour Payment">High-Value Tour Payment</option>
-                    <option value="Family Maintenance">Family Maintenance</option>
-                    <option value="GIC / Blocked Account">GIC / Blocked Account</option>
+                    <option value="Student Overseas College Fees Payment">Student Overseas College Fees Payment</option>
+                    <option value="Overseas Block Account Payments">Overseas Block Account Payments</option>
+                    <option value="DMC Tour Payments and FIT Tour Payments">DMC Tour Payments and FIT Tour Payments</option>
+                    <option value="Currency Exchange">Currency Exchange</option>
+                    <option value="Travel Cards">Travel Cards</option>
+                    <option value="Family Maintainence">Family Maintainence</option>
+                    <option value="Gift Remittance">Gift Remittance</option>
+                    <option value="Overseas Health Insuranc">Overseas Health Insuranc</option>
+                    <option value="Demand Draft for Immigration">Demand Draft for Immigration</option>
                     <option value="Other">Other</option>
                   </select>
                 </div>

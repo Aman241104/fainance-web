@@ -13,38 +13,54 @@ import { motion } from 'framer-motion';
 
 const SERVICES_DATA = [
   {
-    title: 'Student Fee Payments',
-    description: 'Expert handling of tuition fees via Flywire, Convera, and CIBC for international universities. Secure, fast, and compliant.',
+    title: 'Student Overseas College Fees Payment',
+    description: 'Expert separation of tuition fees via Flywire, Convera, and CIBC. Secure and compliant.',
     icon: GraduationCap,
   },
   {
-    title: 'Overseas Block Accounts',
-    description: 'Secure fund transfers for student visa requirements (GIC/Blocked Accounts) in Germany, Canada, and more.',
+    title: 'Overseas Block Account Payments',
+    description: 'Secure fund transfers for student visa requirements (GIC/Blocked Accounts).',
     icon: Building2,
   },
   {
-    title: 'Tour & Travel Payments',
-    description: 'Seamless payments for international tour operators. Handling high-volume transactions from 1 Rs to 2.5 Cr.',
+    title: 'DMC Tour Payments and FIT Tour Payments',
+    description: 'Seamless payments for international tour operators and independent travelers.',
     icon: Plane,
   },
   {
-    title: 'Currency & Travel Cards',
-    description: 'Best-in-class exchange rates for physical currency and multi-currency forex cards for global travelers.',
+    title: 'Currency Exchange',
+    description: 'Competitive rates for physical currency exchange for global travel.',
     icon: CreditCard,
   },
   {
-    title: 'Family Maintenance',
-    description: 'Reliable and hassle-free remittance services for supporting family members living abroad.',
+    title: 'Travel Cards',
+    description: 'Multi-currency forex cards for convenient spending abroad.',
+    icon: CreditCard,
+  },
+  {
+    title: 'Family Maintainence',
+    description: 'Reliable remittance services for supporting family members living abroad.',
     icon: HeartHandshake,
   },
   {
     title: 'Gift Remittance',
-    description: 'Send monetary gifts to loved ones internationally with complete regulatory compliance and safety.',
+    description: 'Send monetary gifts to loved ones internationally with complete regulatory compliance.',
     icon: Gift,
+  },
+  {
+    title: 'Overseas Health Insuranc',
+    description: 'Comprehensive health insurance options for overseas stay.',
+    icon: HeartHandshake,
+  },
+  {
+    title: 'Demand Draft for Immigration',
+    description: 'Secure demand drafts for immigration and visa purposes.',
+    icon: Building2,
   },
 ];
 
 import { CurrencyBackground } from './CurrencyBackground';
+import { FloatingCoins } from '@/components/FloatingCoins';
 
 export function Services() {
   // Stagger Animations
@@ -67,12 +83,13 @@ export function Services() {
     <section id="services" className="py-24 bg-slate-50 overflow-hidden relative">
       <CurrencyBackground count={20} className="text-emerald-500 z-0" opacity={0.15} />
       <Container className="max-w-7xl">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 relative">
+          <FloatingCoins count={3} className="z-0 opacity-60" />
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-emerald-600 font-bold tracking-wider text-sm uppercase mb-3 block"
+            className="relative z-10 text-emerald-600 font-bold tracking-wider text-sm uppercase mb-3 block"
           >
             Our Expertise
           </motion.span>
@@ -81,7 +98,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
+            className="relative z-10 text-4xl md:text-5xl font-bold text-slate-900 mb-4"
           >
             Tailored Financial Solutions <br className="hidden md:block" /> for Global Mobility
           </motion.h2>
@@ -90,7 +107,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-slate-600 max-w-2xl mx-auto"
+            className="relative z-10 text-lg text-slate-600 max-w-2xl mx-auto"
           >
             From student fees to high-value corporate transactions, we provide specialized services designed for your unique needs.
           </motion.p>

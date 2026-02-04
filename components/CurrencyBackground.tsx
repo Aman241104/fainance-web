@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const CURRENCIES = ["₹", "$", "€", "£", "¥", "C$"];
+const CURRENCIES = ["₹", "$", "€", "£", "¥"];
 
 interface CurrencyBackgroundProps {
   count?: number;

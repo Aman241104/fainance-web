@@ -39,11 +39,13 @@ const PARTNERS = [
 ];
 
 import { CurrencyBackground } from './CurrencyBackground';
+import { FloatingCoins } from '@/components/FloatingCoins';
 
 export function Trust() {
   return (
     <section id="trust" className="bg-white relative">
       <CurrencyBackground count={15} className="text-emerald-500 z-0" opacity={0.15} />
+
       
       {/* 1. Infinite Ticker & BNI Badge */}
       <div className="border-b border-slate-100 py-8 overflow-hidden bg-slate-50/50">
@@ -55,8 +57,8 @@ export function Trust() {
               <div className="w-8 h-8 bg-[#8A051D] rounded-full flex items-center justify-center text-white font-bold text-xs shadow-md">
                 BNI
               </div>
-              <span className="text-sm font-bold text-slate-800 tracking-tight">
-                Proud Member of <span className="text-[#8A051D]">Ares Chapter</span>
+              <span className="text-base md:text-lg font-extrabold text-slate-900 tracking-tight">
+                Proud Member of <span className="text-[#8A051D] text-lg md:text-xl">Ares Chapter</span>
               </span>
             </div>
 
@@ -100,9 +102,9 @@ export function Trust() {
             
             {/* Block 1: Total Turnover */}
             <div className="pt-8 md:pt-0 px-4">
-              <Counter value={150} suffix=" Cr+" prefix="₹" />
+              <Counter value={25} suffix="+" />
               <p className="text-emerald-400 font-medium tracking-wide uppercase text-sm mt-4">
-                Total Turnover
+                Years of Experience
               </p>
             </div>
 
@@ -113,23 +115,15 @@ export function Trust() {
             <div className="pt-8 md:pt-0 px-4">
               <Counter value={2.5} suffix=" Cr" prefix="₹" decimals={1} />
               <p className="text-emerald-400 font-medium tracking-wide uppercase text-sm mt-4">
-                Max Transaction Cap
+                Max Transaction capped is as per RBI Guidelines
               </p>
             </div>
 
             {/* Block 3: Established Badge */}
-            <div className="pt-8 md:pt-0 px-4 flex flex-col items-center justify-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: "backOut" }}
-                className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 mb-2"
-              >
-                <span className="text-2xl font-bold text-white">2020</span>
-              </motion.div>
-              <p className="text-emerald-400 font-medium tracking-wide uppercase text-sm mt-4">
-                Established
+            <div className="pt-8 md:pt-0 px-4">
+               <Counter value={1000} suffix="+" />
+               <p className="text-emerald-400 font-medium tracking-wide uppercase text-sm mt-4">
+                Happy Clients
               </p>
             </div>
 
@@ -138,8 +132,9 @@ export function Trust() {
       </div>
 
       {/* 3. Problem / Solution & Referral CTA */}
-      <div className="py-24">
-        <Container>
+      <div className="py-24 relative overflow-hidden">
+        <FloatingCoins count={3} className="z-0 opacity-50" />
+        <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             
             {/* Left: Problem Solved */}

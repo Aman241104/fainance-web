@@ -20,7 +20,7 @@ export function FloatingCoins({ className = "", count = 4 }: FloatingCoinsProps)
   const displayCoins = COINS.slice(0, Math.min(count, COINS.length));
 
   return (
-    <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
+    <div className={`absolute inset-0 pointer-events-none ${className}`}>
       {displayCoins.map((coin, index) => {
         // distribute positions
         const isLeft = index % 2 === 0;
@@ -50,12 +50,13 @@ export function FloatingCoins({ className = "", count = 4 }: FloatingCoinsProps)
               }
             }}
             className={`absolute flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full shadow-lg backdrop-blur-sm border border-white/20 text-white ${coin.color}
-              ${isTop ? 'top-10 md:top-20' : 'bottom-10 md:bottom-20'}
+              ${isTop ? '-top-6 md:top-20' : 'bottom-10 md:bottom-20'}
               ${isLeft ? 'left-4 md:left-10' : 'right-4 md:right-10'}
+              ${index >= 2 ? 'hidden md:flex' : ''}
             `}
             style={{
                // Offset positions to avoid perfect corners
-               [isTop ? 'top' : 'bottom']: `${10 + (index * 5)}%`,
+               [isTop ? 'top' : 'bottom']: `${(isTop ? 0 : 10) + (index * 5)}%`,
                [isLeft ? 'left' : 'right']: `${5 + (index * 5)}%`
             }}
           >

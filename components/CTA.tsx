@@ -100,7 +100,7 @@ export function CTA() {
                 <span className="text-emerald-600">Local Expertise.</span>
               </h3>
               <p className="text-slate-600 mb-8 max-w-md">
-                Bridging the gap across global markets, including India and Canada, with dedicated support across international corridors.
+                Bridging the gap across global markets with dedicated support across international corridors.
               </p>
 
               {/* Text-Based Corridor Graphic */}

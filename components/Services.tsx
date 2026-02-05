@@ -120,7 +120,7 @@ export function Services() {
           viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {SERVICES_DATA.map((service, index) => {
+          {SERVICES_DATA.map((service) => {
              const isSpecial = service.title === 'Student Fee Payments';
              return (
                <motion.div
